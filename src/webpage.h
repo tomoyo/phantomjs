@@ -509,6 +509,7 @@ private slots:
     void handleRepaintRequested(const QRect& dirtyRect);
     void handleUrlChanged(const QUrl& url);
     void handleCurrentFrameDestroyed();
+    void handleUnsupportedContent(QNetworkReply *reply);
 
 private:
     QImage renderImage();
