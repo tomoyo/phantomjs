@@ -487,6 +487,7 @@ signals:
     void initialized();
     void loadStarted();
     void loadFinished(const QString& status);
+    void downloadFinished(const QString &status);
     void javaScriptAlertSent(const QString& msg);
     void javaScriptConsoleMessageSent(const QString& message);
     void javaScriptErrorSent(const QString& msg, int lineNumber, const QString& sourceID, const QString& stack);
@@ -502,6 +503,7 @@ signals:
 
 private slots:
     void finish(bool ok);
+    void downloadFinish(bool ok);
     void setupFrame(QWebFrame* frame = NULL);
     void updateLoadingProgress(int progress);
     void handleRepaintRequested(const QRect& dirtyRect);
@@ -522,7 +524,7 @@ private:
      */
     void changeCurrentFrame(QWebFrame* const frame);
 
-    QString filePicker(const QString& oldFile);
+    QString filePicker(const QString &oldFile, bool mustExist = true);
     bool javaScriptConfirm(const QString& msg);
     bool javaScriptPrompt(const QString& msg, const QString& defaultValue, QString* result);
     void javascriptInterrupt();

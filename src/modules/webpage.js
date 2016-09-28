@@ -246,6 +246,8 @@ function decorateNewPage(opts, page) {
 
     definePageSignalHandler(page, handlers, "onLoadFinished", "loadFinished");
 
+    definePageSignalHandler(page, handlers, "onDownloadFinished", "downloadFinished");
+
     definePageSignalHandler(page, handlers, "onUrlChanged", "urlChanged");
 
     definePageSignalHandler(page, handlers, "onNavigationRequested", "navigationRequested");

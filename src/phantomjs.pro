@@ -23,6 +23,7 @@ HEADERS += \
     phantom.h \
     callback.h \
     webpage.h \
+    downloader.h \
     webserver.h \
     consts.h \
     utils.h \
@@ -41,6 +42,7 @@ HEADERS += \
 SOURCES += phantom.cpp \
     callback.cpp \
     webpage.cpp \
+    downloader.cpp \
     webserver.cpp \
     main.cpp \
     utils.cpp \
