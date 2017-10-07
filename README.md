@@ -1,5 +1,5 @@
-# [PhantomJS](http://phantomjs.org) - Scriptable Headless WebKit
-## phantomjs 2.1 support download files
+# [PhantomJS 2.1](http://phantomjs.org) - Scriptable Headless WebKit
+## Support download files
 
 ```js
     page.onResourceReceived = function(response) {
@@ -21,3 +21,12 @@
     }
 ```
 
+## page.onInitialized on every frame
+
+```js
+    page.onInitialized = function() {
+
+        console.log("INIT ON A FRAME");
+
+    };
+```    

@@ -1745,12 +1745,19 @@ void WebPage::setupFrame(QWebFrame* frame)
 
     // Inject the Callbacks object in the main frame
     injectCallbacksObjIntoFrame(frame == NULL ? m_mainFrame : frame, m_callbacks);
+
+    qDebug() << "WebPage - setupFrame - initialized" << (frame == NULL ? "" : frame->frameName());
+    this->changeCurrentFrame(frame == NULL ? m_mainFrame : frame);
+    emit initialized();
 }
 
 void WebPage::updateLoadingProgress(int progress)
 {
     qDebug() << "WebPage - updateLoadingProgress:" << progress;
     m_loadingProgress = progress;
+
+    if(progress > 90)
+        this->changeCurrentFrame(m_mainFrame);
 }
 
 void WebPage::handleRepaintRequested(const QRect& dirtyRect)
