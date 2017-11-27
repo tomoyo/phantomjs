@@ -318,12 +318,12 @@ class PhantomJSBuilder(object):
         configureOptions = [
             # disable some webkit features we do not need
             "WEBKIT_CONFIG-=build_webkit2",
-            "WEBKIT_CONFIG-=netscape_plugin_api",
-            "WEBKIT_CONFIG-=use_gstreamer",
-            "WEBKIT_CONFIG-=use_gstreamer010",
-            "WEBKIT_CONFIG-=use_native_fullscreen_video",
-            "WEBKIT_CONFIG-=video",
-            "WEBKIT_CONFIG-=web_audio",
+            #"WEBKIT_CONFIG-=netscape_plugin_api",
+            #"WEBKIT_CONFIG-=use_gstreamer",
+            #"WEBKIT_CONFIG-=use_gstreamer010",
+            #"WEBKIT_CONFIG-=use_native_fullscreen_video",
+            #"WEBKIT_CONFIG-=video",
+            #"WEBKIT_CONFIG-=web_audio",
         ]
         if self.options.webkit_qmake_args:
             configureOptions.extend(self.options.webkit_qmake_args)
